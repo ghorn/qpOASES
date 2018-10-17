@@ -17,10 +17,10 @@
  *
  *	You should have received a copy of the GNU Lesser General Public
  *	License along with qpOASES; if not, write to the Free Software
- *	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301
+ *USA
  *
  */
-
 
 /**
  *	\file examples/example4CP.cpp
@@ -28,14 +28,13 @@
  *	\version 3.2
  *	\date 2009-2017
  *
- *	Sample implementation of the ConstraintProduct class tailored for Example4.
+ *	Sample implementation of the ConstraintProduct class tailored for
+ *Example4.
  */
-
 
 BEGIN_NAMESPACE_QPOASES
 
-
-/** 
+/**
  *	\brief Example illustrating the use of the \a ConstraintProduct class.
  *
  *	Example illustrating the use of the \a ConstraintProduct class.
@@ -44,69 +43,54 @@ BEGIN_NAMESPACE_QPOASES
  *	\version 3.2
  *	\date 2007-2017
  */
-class MyConstraintProduct : public ConstraintProduct
-{
-	public:
-		/** Default constructor. */
-		MyConstraintProduct( ) {};
+class MyConstraintProduct : public ConstraintProduct {
+public:
+  /** Default constructor. */
+  MyConstraintProduct(){};
 
-		/** Constructor. */
-		MyConstraintProduct(	int_t _nV,
-								int_t _nC,
-								real_t* _A
-								)
-		{
-			nV = _nV;
-			nC = _nC;
-			A  = _A;
-		};
+  /** Constructor. */
+  MyConstraintProduct(int_t _nV, int_t _nC, real_t *_A) {
+    nV = _nV;
+    nC = _nC;
+    A = _A;
+  };
 
-		/** Copy constructor (flat copy). */
-		MyConstraintProduct(	const MyConstraintProduct& rhs
-								)
-		{
-			nV = rhs.nV;
-			nC = rhs.nC;
-			A  = rhs.A;
-		};
+  /** Copy constructor (flat copy). */
+  MyConstraintProduct(const MyConstraintProduct &rhs) {
+    nV = rhs.nV;
+    nC = rhs.nC;
+    A = rhs.A;
+  };
 
-		/** Destructor. */
-		virtual ~MyConstraintProduct( ) {};
-		
-		/** Assignment operator (flat copy). */
-		MyConstraintProduct& operator=(	const MyConstraintProduct& rhs
-										)
-		{
-			if ( this != &rhs )
-			{
-				nV = rhs.nV;
-				nC = rhs.nC;
-				A  = rhs.A;
-			}
-			return *this;
-		};
+  /** Destructor. */
+  virtual ~MyConstraintProduct(){};
 
-		virtual int_t operator() (	int_t constrIndex,
-									const real_t* const x,
-									real_t* const constrValue
-									) const
-		{
-			int_t i;
+  /** Assignment operator (flat copy). */
+  MyConstraintProduct &operator=(const MyConstraintProduct &rhs) {
+    if (this != &rhs) {
+      nV = rhs.nV;
+      nC = rhs.nC;
+      A = rhs.A;
+    }
+    return *this;
+  };
 
-			constrValue[0] = 1.0 * x[(constrIndex/10)+2];
+  virtual int_t operator()(int_t constrIndex, const real_t *const x,
+                           real_t *const constrValue) const {
+    int_t i;
 
-			for( i=0; i<2; ++i )
-				constrValue[0] += A[constrIndex*nV + i] * x[i];
+    constrValue[0] = 1.0 * x[(constrIndex / 10) + 2];
 
-			return 0;
-		};
+    for (i = 0; i < 2; ++i)
+      constrValue[0] += A[constrIndex * nV + i] * x[i];
 
-	protected:
-		int_t nV;		/**< Number of variables. */
-		int_t nC;		/**< Number of constraints. */
-		real_t* A;		/**< Pointer to full constraint matrix (typically not needed!). */
+    return 0;
+  };
+
+protected:
+  int_t nV;  /**< Number of variables. */
+  int_t nC;  /**< Number of constraints. */
+  real_t *A; /**< Pointer to full constraint matrix (typically not needed!). */
 };
 
-
 END_NAMESPACE_QPOASES
-

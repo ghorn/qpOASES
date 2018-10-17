@@ -17,10 +17,10 @@
  *
  *	You should have received a copy of the GNU Lesser General Public
  *	License along with qpOASES; if not, write to the Free Software
- *	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301
+ *USA
  *
  */
-
 
 /**
  *	\file testing/cpp/test_vanBarelsUnboundedQP.cpp
@@ -31,38 +31,32 @@
  *	Example that causes troubles when hotstarting.
  */
 
-
-
 #include <qpOASES.hpp>
 #include <qpOASES/UnitTesting.hpp>
 
 #include <stdio.h>
 
+int main() {
+  USING_NAMESPACE_QPOASES
 
+  real_t H[2 * 2] = {1.0, 0.0, 0.0, 0.0};
+  real_t g[2] = {1.5, 1.0};
 
-int main( )
-{
-	USING_NAMESPACE_QPOASES
+  Options options;
+  // options.enableFarBounds = BT_FALSE;
 
-	real_t H[2*2] = { 1.0, 0.0, 0.0, 0.0 };
-	real_t g[2] = { 1.5, 1.0 };
-		
-	Options options;
-	//options.enableFarBounds = BT_FALSE;
+  QProblemB qp(2);
+  qp.setOptions(options);
 
-	QProblemB qp(2);
-	qp.setOptions( options );
+  int_t iter = 10;
+  qp.init(H, g, 0, 0, iter);
 
-	int_t iter = 10;
-	qp.init( H,g,0,0,iter );
+  real_t xOpt[2];
+  qp.getPrimalSolution(xOpt);
+  print(xOpt, 2);
 
-	real_t xOpt[2];
-	qp.getPrimalSolution( xOpt );
-	print( xOpt,2 );
-
-	return TEST_PASSED;
+  return TEST_PASSED;
 }
-
 
 /*
  *	end of file

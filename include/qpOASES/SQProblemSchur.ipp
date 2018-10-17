@@ -17,10 +17,10 @@
  *
  *	You should have received a copy of the GNU Lesser General Public
  *	License along with qpOASES; if not, write to the Free Software
- *	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301
+ *USA
  *
  */
-
 
 /**
  *	\file include/qpOASES/SQProblemSchur.ipp
@@ -28,14 +28,12 @@
  *	\version 3.2
  *	\date 2012-2017
  *
- *	Implementation of inlined member functions of the SQProblemSchur class which
- *	is able to use the newly developed online active set strategy for
+ *	Implementation of inlined member functions of the SQProblemSchur class
+ *which is able to use the newly developed online active set strategy for
  *	parametric quadratic programming.
  */
 
-
 BEGIN_NAMESPACE_QPOASES
-
 
 /*****************************************************************************
  *  P U B L I C                                                              *
@@ -44,13 +42,11 @@ BEGIN_NAMESPACE_QPOASES
 /*
  *	g e t N u m F a c t o r i z a t i o n s
  */
-inline int_t SQProblemSchur::getNumFactorizations( ) const
-{
-	return numFactorizations;
+inline int_t SQProblemSchur::getNumFactorizations() const {
+  return numFactorizations;
 }
 
 END_NAMESPACE_QPOASES
-
 
 /*
  *	end of file

@@ -17,10 +17,10 @@
  *
  *	You should have received a copy of the GNU Lesser General Public
  *	License along with qpOASES; if not, write to the Free Software
- *	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301
+ *USA
  *
  */
-
 
 /**
  *	\file include/qpOASES/Bounds.ipp
@@ -32,9 +32,7 @@
  *	to manage working sets of bounds within a QProblem.
  */
 
-
 BEGIN_NAMESPACE_QPOASES
-
 
 /*****************************************************************************
  *  P U B L I C                                                              *
@@ -43,77 +41,44 @@ BEGIN_NAMESPACE_QPOASES
 /*
  *	g e t N V
  */
-inline int_t Bounds::getNV( ) const
-{
- 	return n;
-}
-
+inline int_t Bounds::getNV() const { return n; }
 
 /*
  *	g e t N F V
  */
-inline int_t Bounds::getNFV( ) const
-{
- 	return getNumberOfType( ST_EQUALITY );
-}
-
+inline int_t Bounds::getNFV() const { return getNumberOfType(ST_EQUALITY); }
 
 /*
  *	g e t N B V
  */
-inline int_t Bounds::getNBV( ) const
-{
- 	return getNumberOfType( ST_BOUNDED );
-}
-
+inline int_t Bounds::getNBV() const { return getNumberOfType(ST_BOUNDED); }
 
 /*
  *	g e t N U V
  */
-inline int_t Bounds::getNUV( ) const
-{
-	return getNumberOfType( ST_UNBOUNDED );
-}
-
+inline int_t Bounds::getNUV() const { return getNumberOfType(ST_UNBOUNDED); }
 
 /*
  *	g e t N F R
  */
-inline int_t Bounds::getNFR( ) const
-{
- 	return freee.getLength( );
-}
-
+inline int_t Bounds::getNFR() const { return freee.getLength(); }
 
 /*
  *	g e t N F X
  */
-inline int_t Bounds::getNFX( ) const
-{
-	return fixed.getLength( );
-}
-
+inline int_t Bounds::getNFX() const { return fixed.getLength(); }
 
 /*
  *	g e t F r e e
  */
-inline Indexlist* Bounds::getFree( )
-{
-	return &freee;
-}
-
+inline Indexlist *Bounds::getFree() { return &freee; }
 
 /*
  *	g e t F i x e d
  */
-inline Indexlist* Bounds::getFixed( )
-{
-	return &fixed;
-}
-
+inline Indexlist *Bounds::getFixed() { return &fixed; }
 
 END_NAMESPACE_QPOASES
-
 
 /*
  *	end of file

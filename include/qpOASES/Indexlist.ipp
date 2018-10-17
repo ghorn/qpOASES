@@ -17,10 +17,10 @@
  *
  *	You should have received a copy of the GNU Lesser General Public
  *	License along with qpOASES; if not, write to the Free Software
- *	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301
+ *USA
  *
  */
-
 
 /**
  *	\file include/qpOASES/Indexlist.ipp
@@ -28,64 +28,49 @@
  *	\version 3.2
  *	\date 2007-2017
  *
- *	Implementation of inlined member functions of the Indexlist class designed
- *	to manage index lists of constraints and bounds within a QProblem_SubjectTo.
+ *	Implementation of inlined member functions of the Indexlist class
+ *designed to manage index lists of constraints and bounds within a
+ *QProblem_SubjectTo.
  */
 
-
 BEGIN_NAMESPACE_QPOASES
-
 
 /*****************************************************************************
  *  P U B L I C                                                              *
  *****************************************************************************/
 
-
 /*
  *	g e t N u m b e r
  */
-inline int_t Indexlist::getNumber( int_t physicalindex ) const
-{
-	/* consistency check */
-	if ( ( physicalindex < 0 ) || ( physicalindex > length ) )
-		return -RET_INDEXLIST_OUTOFBOUNDS;
+inline int_t Indexlist::getNumber(int_t physicalindex) const {
+  /* consistency check */
+  if ((physicalindex < 0) || (physicalindex > length))
+    return -RET_INDEXLIST_OUTOFBOUNDS;
 
-	return number[physicalindex];
+  return number[physicalindex];
 }
-
 
 /*
  *	g e t L e n g t h
  */
-inline int_t Indexlist::getLength( ) const
-{
-	return length;
-}
-
+inline int_t Indexlist::getLength() const { return length; }
 
 /*
  *	g e t L a s t N u m b e r
  */
-inline int_t Indexlist::getLastNumber( ) const
-{
-	return number[length-1];
-}
-
+inline int_t Indexlist::getLastNumber() const { return number[length - 1]; }
 
 /*
  *	g e t L a s t N u m b e r
  */
-inline BooleanType Indexlist::isMember( int_t _number ) const
-{
-	if ( getIndex( _number ) >= 0 )
-		return BT_TRUE;
-	else
-		return BT_FALSE;
+inline BooleanType Indexlist::isMember(int_t _number) const {
+  if (getIndex(_number) >= 0)
+    return BT_TRUE;
+  else
+    return BT_FALSE;
 }
-
 
 END_NAMESPACE_QPOASES
-
 
 /*
  *	end of file
