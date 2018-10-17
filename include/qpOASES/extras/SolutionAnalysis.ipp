@@ -21,7 +21,6 @@
  *
  */
 
-
 /**
  *	\file include/qpOASES/extras/SolutionAnalysis.ipp
  *	\author Hans Joachim Ferreau (thanks to Boris Houska)
@@ -33,18 +32,13 @@
  *
  */
 
-
-
 /*****************************************************************************
  *  P U B L I C                                                              *
  *****************************************************************************/
 
-
 BEGIN_NAMESPACE_QPOASES
 
-
 END_NAMESPACE_QPOASES
-
 
 /*
  *	end of file

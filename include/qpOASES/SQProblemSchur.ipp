@@ -21,7 +21,6 @@
  *
  */
 
-
 /**
  *	\file include/qpOASES/SQProblemSchur.ipp
  *	\author Andreas Waechter, Dennis Janka
@@ -33,9 +32,7 @@
  *	parametric quadratic programming.
  */
 
-
 BEGIN_NAMESPACE_QPOASES
-
 
 /*****************************************************************************
  *  P U B L I C                                                              *
@@ -44,13 +41,11 @@ BEGIN_NAMESPACE_QPOASES
 /*
  *	g e t N u m F a c t o r i z a t i o n s
  */
-inline int_t SQProblemSchur::getNumFactorizations( ) const
-{
-	return numFactorizations;
+inline int_t SQProblemSchur::getNumFactorizations() const {
+  return numFactorizations;
 }
 
 END_NAMESPACE_QPOASES
-
 
 /*
  *	end of file

@@ -21,7 +21,6 @@
  *
  */
 
-
 /**
  *	\file include/qpOASES/Constraints.ipp
  *	\author Hans Joachim Ferreau, Andreas Potschka, Christian Kirches
@@ -32,90 +31,69 @@
  *	to manage working sets of constraints within a QProblem.
  */
 
-
 BEGIN_NAMESPACE_QPOASES
-
 
 /*****************************************************************************
  *  P U B L I C                                                              *
  *****************************************************************************/
 
-
 /*
  *	g e t N C
  */
-inline int_t Constraints::getNC( ) const
-{
- 	return n;
+inline int_t Constraints::getNC() const {
+  return n;
 }
-
 
 /*
  *	g e t N E C
  */
-inline int_t Constraints::getNEC( ) const
-{
-	return getNumberOfType( ST_EQUALITY );
+inline int_t Constraints::getNEC() const {
+  return getNumberOfType(ST_EQUALITY);
 }
-
 
 /*
  *	g e t N I C
  */
-inline int_t Constraints::getNIC( ) const
-{
- 	return getNumberOfType( ST_BOUNDED );
+inline int_t Constraints::getNIC() const {
+  return getNumberOfType(ST_BOUNDED);
 }
-
 
 /*
  *	g e t N U C
  */
-inline int_t Constraints::getNUC( ) const
-{
- 	return getNumberOfType( ST_UNBOUNDED );
+inline int_t Constraints::getNUC() const {
+  return getNumberOfType(ST_UNBOUNDED);
 }
-
 
 /*
  *	g e t N A C
  */
-inline int_t Constraints::getNAC( ) const
-{
- 	return active.getLength( );
+inline int_t Constraints::getNAC() const {
+  return active.getLength();
 }
-
 
 /*
  *	g e t N I A C
  */
-inline int_t Constraints::getNIAC( ) const
-{
-	return inactive.getLength( );
+inline int_t Constraints::getNIAC() const {
+  return inactive.getLength();
 }
-
-
 
 /*
  *	g e t A c t i v e
  */
-inline Indexlist* Constraints::getActive( )
-{
-	return &active;
+inline Indexlist *Constraints::getActive() {
+  return &active;
 }
-
 
 /*
  *	g e t I n a c t i v e
  */
-inline Indexlist* Constraints::getInactive( )
-{
-	return &inactive;
+inline Indexlist *Constraints::getInactive() {
+  return &inactive;
 }
 
-
 END_NAMESPACE_QPOASES
-
 
 /*
  *	end of file

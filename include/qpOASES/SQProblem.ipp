@@ -21,7 +21,6 @@
  *
  */
 
-
 /**
  *	\file include/qpOASES/SQProblem.ipp
  *	\author Hans Joachim Ferreau, Andreas Potschka, Christian Kirches
@@ -33,18 +32,13 @@
  *	parametric quadratic programming with varying matrices.
  */
 
-
-
 /*****************************************************************************
  *  P U B L I C                                                              *
  *****************************************************************************/
 
-
 BEGIN_NAMESPACE_QPOASES
 
-
 END_NAMESPACE_QPOASES
-
 
 /*
  *	end of file

@@ -21,7 +21,6 @@
  *
  */
 
-
 /**
  *	\file include/qpOASES.hpp
  *	\author Hans Joachim Ferreau, Andreas Potschka, Christian Kirches
@@ -29,25 +28,24 @@
  *	\date 2007-2015
  */
 
-
 #if defined(__SINGLE_OBJECT__) || defined(__C_WRAPPER__)
 
-#include <MessageHandling.cpp>
-#include <Utils.cpp>
-#include <Indexlist.cpp>
-#include <SubjectTo.cpp>
+#include <BLASReplacement.cpp>
 #include <Bounds.cpp>
 #include <Constraints.cpp>
-#include <BLASReplacement.cpp>
+#include <Flipper.cpp>
+#include <Indexlist.cpp>
 #include <LAPACKReplacement.cpp>
 #include <Matrices.cpp>
+#include <MessageHandling.cpp>
 #include <Options.cpp>
-#include <QProblemB.cpp>
-#include <Flipper.cpp>
 #include <QProblem.cpp>
+#include <QProblemB.cpp>
 #include <SQProblem.cpp>
-#include <SparseSolver.cpp>
 #include <SQProblemSchur.cpp>
+#include <SparseSolver.cpp>
+#include <SubjectTo.cpp>
+#include <Utils.cpp>
 
 #ifndef __C_WRAPPER__
 #include <OQPinterface.cpp>
@@ -56,8 +54,8 @@
 
 #else /* default compilation mode */
 
-#include <qpOASES/QProblemB.hpp>
 #include <qpOASES/QProblem.hpp>
+#include <qpOASES/QProblemB.hpp>
 #include <qpOASES/SQProblem.hpp>
 #include <qpOASES/SQProblemSchur.hpp>
 #include <qpOASES/extras/OQPinterface.hpp>

@@ -21,7 +21,6 @@
  *
  */
 
-
 /**
  *	\file include/qpOASES/SubjectTo.ipp
  *	\author Hans Joachim Ferreau, Andreas Potschka, Christian Kirches
@@ -32,126 +31,99 @@
  *	designed to manage working sets of constraints and bounds within a QProblem.
  */
 
-
 BEGIN_NAMESPACE_QPOASES
-
 
 /*****************************************************************************
  *  P U B L I C                                                              *
  *****************************************************************************/
 
-
 /*
  *	g e t N u m b e r O f T y p e
  */
-inline int_t SubjectTo::getNumberOfType( SubjectToType _type ) const
-{
-	int_t i;
-	int_t numberOfType = 0;
+inline int_t SubjectTo::getNumberOfType(SubjectToType _type) const {
+  int_t i;
+  int_t numberOfType = 0;
 
-	if ( type != 0 )
-	{
-		for( i=0; i<n; ++i )
-			if ( type[i] == _type )
-				++numberOfType;
-	}
+  if (type != 0) {
+    for (i = 0; i < n; ++i)
+      if (type[i] == _type)
+        ++numberOfType;
+  }
 
-	return numberOfType;
+  return numberOfType;
 }
-
 
 /*
  *	g e t T y p e
  */
-inline SubjectToType SubjectTo::getType( int_t i ) const
-{
-	if ( ( i >= 0 ) && ( i < n ) )
-		return type[i];
+inline SubjectToType SubjectTo::getType(int_t i) const {
+  if ((i >= 0) && (i < n))
+    return type[i];
 
-	return ST_UNKNOWN;
+  return ST_UNKNOWN;
 }
-
 
 /*
  *	g e t S t a t u s
  */
-inline SubjectToStatus SubjectTo::getStatus( int_t i ) const
-{
-	if ( ( i >= 0 ) && ( i < n ) )
-		return status[i];
+inline SubjectToStatus SubjectTo::getStatus(int_t i) const {
+  if ((i >= 0) && (i < n))
+    return status[i];
 
-	return ST_UNDEFINED;
+  return ST_UNDEFINED;
 }
-
 
 /*
  *	s e t T y p e
  */
-inline returnValue SubjectTo::setType( int_t i, SubjectToType value )
-{
-	if ( ( i >= 0 ) && ( i < n ) )
-	{
-		type[i] = value;
-		return SUCCESSFUL_RETURN;
-	}
-	else
-		return THROWERROR( RET_INDEX_OUT_OF_BOUNDS );
+inline returnValue SubjectTo::setType(int_t i, SubjectToType value) {
+  if ((i >= 0) && (i < n)) {
+    type[i] = value;
+    return SUCCESSFUL_RETURN;
+  } else
+    return THROWERROR(RET_INDEX_OUT_OF_BOUNDS);
 }
-
 
 /*
  *	s e t S t a t u s
  */
-inline returnValue SubjectTo::setStatus( int_t i, SubjectToStatus value )
-{
-	if ( ( i >= 0 ) && ( i < n ) )
-	{
-		status[i] = value;
-		return SUCCESSFUL_RETURN;
-	}
-	else
-		return THROWERROR( RET_INDEX_OUT_OF_BOUNDS );
+inline returnValue SubjectTo::setStatus(int_t i, SubjectToStatus value) {
+  if ((i >= 0) && (i < n)) {
+    status[i] = value;
+    return SUCCESSFUL_RETURN;
+  } else
+    return THROWERROR(RET_INDEX_OUT_OF_BOUNDS);
 }
-
 
 /*
  *	s e t N o L o w e r
  */
-inline void SubjectTo::setNoLower( BooleanType _status )
-{
-	noLower = _status;
+inline void SubjectTo::setNoLower(BooleanType _status) {
+  noLower = _status;
 }
-
 
 /*
  *	s e t N o U p p e r
  */
-inline void SubjectTo::setNoUpper( BooleanType _status )
-{
-	noUpper = _status;
+inline void SubjectTo::setNoUpper(BooleanType _status) {
+  noUpper = _status;
 }
-
 
 /*
  *	h a s N o L o w e r
  */
-inline BooleanType SubjectTo::hasNoLower( ) const
-{
-	return noLower;
+inline BooleanType SubjectTo::hasNoLower() const {
+  return noLower;
 }
-
 
 /*
  *	h a s N o U p p p e r
  */
-inline BooleanType SubjectTo::hasNoUpper( ) const
-{
-	return noUpper;
+inline BooleanType SubjectTo::hasNoUpper() const {
+  return noUpper;
 }
 
-
 END_NAMESPACE_QPOASES
-
 
 /*
  *	end of file
